@@ -44,5 +44,19 @@ namespace Shadowsocks.Models
         /// </summary>
         [JsonPropertyName("remarks")]
         public string Name { get; set; }
+        
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public string? Plugin { get; set; }
+
+        /// <summary>
+        /// Gets or sets the plugin options passed as environment variables.
+        /// </summary>
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public string? PluginOpts { get; set; }
+
+        /// <summary>
+        /// Gets or sets the server name.
+        /// </summary>
+        [JsonPropertyName("remarks")]
     }
 }
